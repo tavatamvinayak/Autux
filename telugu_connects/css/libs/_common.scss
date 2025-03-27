@@ -1,0 +1,601 @@
+// libs/_common.scss
+
+body {
+  font-size: 12px;
+  @include font-rg;
+  color: $black;
+  box-sizing: border-box;
+  background-color: $black;
+}
+
+.fw {
+  width: 100%;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.rd-corners {
+  border-radius: 22px;
+}
+.block {
+  padding: 30px;
+  border-radius: 22px;
+}
+.relative {
+  position: relative;
+}
+.resp-img {
+ width: 100%;
+ height: auto;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+/* Buttons ================================================================== */
+@mixin btn {
+  @include font-bd;
+  display: inline-block;
+  padding: 0 30px 0 0;
+  color: $bc1;
+  text-decoration: none;
+  font-size: 24px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 42px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  @include resp-tab {
+    font-size: 24px;
+    padding: 0 26px 0 0;
+  }
+  @include resp-desk {
+    font-size: 28px;
+    padding: 0 36px 0 0;
+  }
+  @include resp-xl {
+    font-size: 32px;
+  }
+  &::before {
+    content: '';
+    width: 32px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 52%;
+    transform: translateY(-50%);
+    background-image: url('../images/arrow-right-bc1.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 18px auto;
+    transition: all 0.4s ease-in-out;
+    transition-delay: 0.4s;
+    @include resp-tab {
+      height: 20px;
+      background-size: 16px auto;
+    }
+    @include resp-desk {
+      height: 25px;
+      background-size: 18px auto;
+      top: 50%;
+    }
+    @include resp-xl {
+      height: 30px;
+      background-size: 20px auto;
+    }
+  }
+  &::after {
+    content: '';
+    width: 32px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 52%;
+    transform: translateY(-50%);
+    background-image: url('../images/arrow-right-wo.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 18px auto;
+    transition: all 0.4s ease-in-out;
+    transition-delay: 0s;
+    opacity: 0;
+    @include resp-tab {
+      height: 30px;
+      background-size: 16px auto;
+    }
+    @include resp-desk {
+      background-size: 20px auto;
+      top: 50%;
+    }
+  }
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    &::before {
+      right: -20px;
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+      transition-delay: 0s;
+    }
+    &::after {
+      right: 0px;
+      opacity: 1;
+      transition: all 0.4s ease-in-out;
+      transition-delay: 0.4s;
+    }
+  }
+}
+.btn2 {
+  @include font-bd;
+  display: inline-block;
+  padding: 0 25px 0 25px;
+  color: $bc1;
+  text-decoration: none;
+  font-size: 22px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 44px;
+  line-height: 42px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  border: solid 2px $bc1;
+  border-radius: 40px;
+  @include resp-desk {
+    font-size: 24px;
+    height: 52px;
+    line-height: 52px;
+    min-width: 160px;
+    text-align: center;
+  }
+  @include resp-xl {
+    font-size: 26px;
+  }
+  &:hover {
+    background-color: $bc1;
+    color: $black;
+  }
+}
+.btn3 {
+  @include font-bd;
+  display: inline-block;
+  padding: 0 25px 0 25px;
+  color: $black;
+  text-decoration: none;
+  font-size: 22px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 44px;
+  line-height: 42px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  border: solid 2px $black;
+  border-radius: 40px;
+  @include resp-desk {
+    font-size: 24px;
+    height: 52px;
+    line-height: 52px;
+    min-width: 160px;
+    text-align: center;
+  }
+  @include resp-xl {
+    font-size: 26px;
+  }
+  &:hover {
+    background-color: $black;
+    color: $bc1;
+  }
+}
+.btn, .navbar-expand-lg .navbar-nav .btn, .leform-form-6 .leform-element .leform-button.btn {
+  @include btn;
+}
+
+.back-btn {
+  @include btn;
+  background-color: transparent;
+  border: transparent;
+  min-width: 0;
+  color: $bc1;
+  background-image: url('../images/chev-left-bc1.svg');
+  background-repeat: no-repeat;
+  background-size: 10px auto;
+  background-position: left 11px;
+  padding-left: 20px;
+  padding-right: 10px;
+  &:hover {
+    background-color: transparent;
+    color: $bc1;
+  }
+}
+.underline-link {
+  color: $black;
+  border-color: $black;
+  &:hover {
+    color: $black;
+    border-color: $black;
+  }
+}
+
+// Box Shadow
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+}
+@mixin box-shadow-hover {
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.50);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.50);
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.50);
+}
+@mixin sect-pad-left {
+  padding-left: 0px;
+  @include resp-tab {
+    padding-left: 40px;
+  }
+  @include resp-desk {
+    padding-left: 60px;
+  }
+}
+@mixin sect-pad-right {
+  padding-right: 0px;
+  @include resp-tab {
+    padding-right: 40px;
+  }
+  @include resp-desk {
+    padding-right: 60px;
+  }
+}
+@mixin sect-pad-top {
+  padding-top: 100px;
+  @include resp-tab {
+    padding-top: 60px;
+  }
+  @include resp-desk {
+    padding-top: 100px;
+  }
+}
+@mixin sect-pad-bot {
+  padding-bottom: 100px;
+  @include resp-tab {
+    padding-bottom: 60px;
+  }
+  @include resp-desk {
+    padding-bottom: 100px;
+  }
+}
+@mixin sect-pad-top-sm {
+  padding-top: 20px;
+  @include resp-tab {
+    padding-top: 25px;
+  }
+  @include resp-desk {
+    padding-top: 30px;
+  }
+}
+@mixin sect-pad-bot-sm {
+  padding-bottom: 20px;
+  @include resp-tab {
+    padding-bottom: 25px;
+  }
+  @include resp-desk {
+    padding-bottom: 30px;
+  }
+}
+@mixin sect-pad-top-lg {
+  padding-top: 40px;
+  @include resp-tab {
+    padding-top: 100px;
+  }
+  @include resp-desk {
+    padding-top: 180px;
+  }
+}
+@mixin sect-pad-bot-lg {
+  padding-bottom: 40px;
+  @include resp-tab {
+    padding-bottom: 100px;
+  }
+  @include resp-desk {
+    padding-bottom: 180px;
+  }
+}
+@mixin sect-mar-top {
+  margin-top: 40px;
+  @include resp-tab {
+    margin-top: 60px;
+  }
+  @include resp-desk {
+    margin-top: 100px;
+  }
+}
+@mixin sect-mar-bot {
+  margin-bottom: 40px;
+  @include resp-tab {
+    margin-bottom: 60px;
+  }
+  @include resp-desk {
+    margin-bottom: 100px;
+  }
+}
+.box-shadow {
+  @include box-shadow;
+}
+
+.sect-pad-top-sm {
+  @include sect-pad-top-sm;
+}
+.sect-pad-bot-sm {
+  @include sect-pad-bot-sm;
+}
+.sect-pad-top {
+  @include sect-pad-top;
+}
+.sect-pad-bot {
+  @include sect-pad-bot;
+}
+.sect-pad-top-lg {
+  @include sect-pad-top-lg;
+}
+.sect-pad-bot-lg {
+  @include sect-pad-bot-lg;
+}
+.sect-mar-top {
+  @include sect-mar-top;
+}
+.sect-mar-bot {
+  @include sect-mar-bot;
+}
+
+/* Placeholder ============================================================== */
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #333;
+  opacity: 1; /* Firefox */
+}
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #333;
+}
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+  color: #333;
+}
+
+/* Breadcrumbs ============================================================== */
+.breadcrumbs {
+  text-align: left;
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    margin-bottom: 0;
+    @include font-rg;
+    font-size: 9px;
+    @include resp-tab {
+      font-size: 11px;
+    }
+    a {
+      display: block;
+      padding: 15px 20px 14px 0px;
+      margin-right: 10px;
+      color: $black;
+      background-image: url('../images/chev-right-white.svg');
+      background-repeat: no-repeat;
+      background-size: 6px auto;
+      background-position: right center;
+      @include resp-tab {
+        padding: 15px 25px 14px 0px;
+        margin-right: 16px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Carousel ================================================================= */
+.carousel-control-prev {
+  background-image: url('../images/chev-left-white.svg');
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  background-position: center center;
+}
+.carousel-control-next {
+  background-image: url('../images/chev-right-white.svg');
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  background-position: center center;
+}
+
+/* Utilities ================================================================ */
+.hide-mob {
+  display: none;
+  @include resp-tab {
+    display: block;
+  }
+  @include resp-desk {
+    display: block;
+  }
+}
+.hide-tab {
+  display: block;
+  @include resp-tab {
+    display: none !important;
+  }
+  @include resp-desk {
+    display: block;
+  }
+}
+.hide-desk {
+  display: block;
+  @include resp-tab {
+    display: block;
+  }
+  @include resp-desk {
+    display: none !important;
+  }
+}
+/* Simple Lightbox Overides ================================================= */
+.sl-wrapper {
+  .sl-navigation button {
+    overflow: hidden;
+    text-indent: -100px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    @include resp-tab {
+      background-size: 30px 30px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .sl-navigation button.sl-prev {
+    background-image: url(../images/chev-left-white.svg);
+  }
+  .sl-navigation button.sl-next {
+    background-image: url(../images/chev-right-white.svg);
+  }
+  button.sl-close {
+    overflow: hidden;
+    text-indent: -100px;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-image: url(../images/close-icon-white.svg);
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    margin: -9px -12px 0 0;
+    @include resp-tab {
+      background-size: 25px 25px;
+      width: 30px;
+      height: 30px;
+      margin: -4px -10px 0 0;
+    }
+  }
+  .sl-counter {
+    @include font-rg;
+    color: $white;
+    left: 20px;
+    top: 20px;
+    @include resp-tab {
+      left: 30px;
+      top: 30px;
+    }
+  }
+}
+.sl-overlay {
+  background: $black;
+  opacity: 0.95;
+}
+body.hidden-scroll {
+  overflow-y: scroll;
+  padding-right: 0 !important;
+}
+.gallery a {
+  &:hover::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    background-repeat: no-repeat;
+    background-image: url('../images/zoom-in.svg');
+    background-size: 30px 30px;
+    background-position: center center;
+  }
+}
+/* Masonry Gallery ========================================================== */
+.grid {
+  width: 100%;
+}
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* ---- grid-item ---- */
+.grid-item {
+  height: 240px;
+  float: left;
+  background: #eee;
+  border-top: 7px solid $white;
+  border-bottom: 8px solid $white;
+  border-left: 15px solid $white;
+  border-right: 15px solid $white;
+  border-radius: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include resp-desk {
+    height: calc(300px - 30px);
+    border: 15px solid $white;
+  }
+}
+.grid-sizer,
+.grid-item {
+  width: 100%;
+  @include resp-desk {
+    width: 33.333%;
+  }
+}
+.grid-item--width2 {
+  width: 100%;
+  height: 240px;
+  @include resp-desk {
+    width: 66.666%;
+    height: calc(600px - 60px);
+  }
+}
+
+/* Iphone Tel No Links ====================================================== */
+a[href^="tel"] {
+  color: $white;
+}
+
+.hw {
+  width: 100%;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  @include resp-tab {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @include resp-xl {
+    min-height: 600px;
+  }
+  .hw-txt {
+    @include sect-pad-top-sm;
+    @include sect-pad-bot-sm;
+    @include sect-pad-left;
+    @include sect-pad-right;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.form-control, .leform-form-9 .leform-element div.leform-input input[type='text'], .leform-form-9 .leform-element div.leform-input input[type='email'], .leform-form-9 .leform-element div.leform-input input[type='textarea'] {
+  border-radius: 10px;
+  border: none;
+  @include p;
+  margin-bottom: 14px;
+  @include resp-tab {
+    margin-bottom: 20px;
+  }
+  @include resp-desk {
+    margin-bottom: 28px;
+  }
+}
+input[type="text"].form-control, .leform-form-9 .leform-element div.leform-input input[type='text'], .leform-form-9 .leform-element div.leform-input input[type='email'] {
+  padding: 15px 15px 13px 15px !important;
+}

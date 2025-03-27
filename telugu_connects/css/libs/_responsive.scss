@@ -1,0 +1,47 @@
+@mixin resp-mob-landscape {
+  @media (max-width: 736px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin mob-only {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin resp-mob-sm {
+  @media (max-width: 767px) and (max-height: 667px) {
+    @content;
+  }
+}
+
+@mixin resp-tab {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin resp-tab-only {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin resp-desk {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin resp-xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin resp-xxl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
