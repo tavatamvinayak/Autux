@@ -4788,10 +4788,11 @@ input[type=text].form-control, .leform-form-9 .leform-element div.leform-input i
 }
 .ep-cta div {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   width: 36%;
   padding-top: 2px;
+  gap:20px
 }
 @media (min-width: 768px) {
   .ep-cta div {
