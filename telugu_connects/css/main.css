@@ -1,3 +1,64 @@
+body {
+  
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+
+.video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            padding: 20px;
+        }
+
+        /* Video element styling */
+        video {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+             /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+            /* background-color: #000; */
+        }
+
+        /* Custom video controls styling */
+        video::-webkit-media-controls {
+            /* background-color: rgba(0, 0, 0, 0.7); */
+            border-radius: 0 0 10px 10px;
+        }
+
+        video::-webkit-media-controls-panel {
+            background-color: transparent;
+        }
+
+        /* Hover effect */
+        video:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            video {
+                width: 100%;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------- Already website Framer work -------------------------------------------------------------------- */
 html,
 body,
 h1,
@@ -808,8 +869,9 @@ body {
 }
 
 .sect-pad-bot {
-  padding-bottom: 100px;
+  padding-bottom: 0px; /* change user */
 }
+
 @media (min-width: 768px) {
   .sect-pad-bot {
     padding-bottom: 60px;
