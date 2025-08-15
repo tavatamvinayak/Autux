@@ -66,8 +66,8 @@
     </div>
 
     <div class="fw header">
-      <a href="/" class="" style="color: white">
-        <h2 style="padding: 30px; font-size: 35px; color: white">
+      <a href="#Home" class="" style="color: yellow">
+        <h2 style="padding: 30px; font-size: 35px; color: yellow">
           Telugu Connects
         </h2>
         <!-- 1<img src="/images/sb-logotype-wo.svg" class="logo" /> -->
@@ -85,53 +85,45 @@
         <li><a href="/podcast.html">PodCast</a></li>
       </ul>
     </div>
+    <!-- video over play -->
+    <div class="video_home">
+      <div>
+        <video  width="400" id="videoPlayer" loop>
+          <source
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support HTML video.
+        </video>
+      </div>
+
+      <div class="">
+        <div class="play-2">
+          <div id="pause_video_button">
+            <img
+              src="images/icons/svg/play-icon.svg"
+              alt=""
+              class="play-2-img"
+              style="
+                width: 20px;
+                height: 20px;
+                filter: invert(100%) brightness(200%);
+              "
+            />
+          </div>
+        </div>
+      </div>
+    </div> 
 
     <!-- Swiper Hero Banner -->
 
     <!-- mouse play start  -->
     <div
-      style="
-        margin: 0;
-        height: 100vh;
-        display: grid;
-        place-content: center;
-      "
+      id="Home"
+      style="margin: 0; height: 100vh; display: grid; place-content: center"
     >
-      <div class="cursor"></div>
-      <div class="hand">
-        <div class="moving-div">
-          <div class="play_and_play_button">
-            <div class="play-1">
-              <div>
-                <p
-                  style="
-                    font-size: 20px;
-                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-                      sans-serif;
-                    margin-bottom: 0;
-                  "
-                >
-                  Play
-                </p>
-              </div>
-            </div>
-            <div class="play-2">
-              <div>
-                <img
-                  src="images/icons/svg/play-icon.svg"
-                  alt=""
-                  class="play-2-img"
-                  style="
-                    width: 20px;
-                    height: 20px;
-                    filter: invert(100%) brightness(200%);
-                  "
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- start ---- here the last time  cursor and hand play button -->
+      <!-- --------------end---------------- -->
       <div class="home_div" style="width: 100vw; height: 100vh">
         <!-- banner start -->
 
@@ -148,6 +140,25 @@
             </div>
           </div>
           <div class="next-section">Scroll</div>
+
+          <!-- video play button -->
+          <div class="">
+            <div class="play-2">
+              <div id="play_video_button">
+                <img
+                  src="images/icons/svg/play-icon.svg"
+                  alt=""
+                  class="play-2-img"
+                  style="
+                    width: 20px;
+                    height: 20px;
+                    filter: invert(100%) brightness(200%);
+                  "
+                />
+              </div>
+            </div>
+          </div>
+          <!-- end video play button -->
         </div>
       </div>
       <!-- banner start -->
@@ -549,12 +560,12 @@
     </div>
     <!-- linkedin video -->
     <div>
-     <div class="video-container">
-        <video  autoplay muted loop >
-            <source src="./media/linkedin slide.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+      <div class="video-container">
+        <video autoplay muted loop>
+          <source src="./media/linkedin slide.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
-    </div>
+      </div>
     </div>
     <!--  -->
     <div class="fw bg-bc1 subscribe-v2">
@@ -651,7 +662,9 @@
                   target="_self"
                 >
                   <div class="news-thumb">
-                    <img src="./images/photos/podcast/Regional Language vs English Content Creation  Making the Right Choice.png" />
+                    <img
+                      src="./images/photos/podcast/Regional Language vs English Content Creation  Making the Right Choice.png"
+                    />
                   </div>
                   <div class="fw">
                     <ul class="news-tags">
@@ -671,7 +684,9 @@
                   target="_self"
                 >
                   <div class="news-thumb">
-                    <img src="./images/photos/podcast/The Future of Content Creation Why Niche Communities Will Win.png" />
+                    <img
+                      src="./images/photos/podcast/The Future of Content Creation Why Niche Communities Will Win.png"
+                    />
                   </div>
                   <div class="fw">
                     <ul class="news-tags">
@@ -691,7 +706,9 @@
                   target="_self"
                 >
                   <div class="news-thumb">
-                    <img src="./images/photos/podcast/Understanding YouTube CTR Why Low CTR = Bad Video Is a Dangerous Myth.png" />
+                    <img
+                      src="./images/photos/podcast/Understanding YouTube CTR Why Low CTR = Bad Video Is a Dangerous Myth.png"
+                    />
                   </div>
                   <div class="fw">
                     <ul class="news-tags">
@@ -711,7 +728,9 @@
                   target="_self"
                 >
                   <div class="news-thumb">
-                    <img src="./images/photos/podcast/The Future of Content Creation Why Niche Communities Will Win.png" />
+                    <img
+                      src="./images/photos/podcast/The Future of Content Creation Why Niche Communities Will Win.png"
+                    />
                   </div>
                   <div class="fw">
                     <ul class="news-tags">
@@ -882,7 +901,7 @@
       });
     </script>
 
-    <script src="js/klaviyo.js" async=""></script>
+    <!-- <script src="js/klaviyo.js" async=""></script> -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var elem = document.createElement("div");
@@ -891,7 +910,64 @@
       });
     </script>
 
-    <!-- -------------------------------  CDN  mouse start home screen ------------------------------------ -->
+    <!-- custom vinayak scripts -->
+    <script>
+      const videoHome = document.querySelector(".video_home");
+      const videoPlayer = document.getElementById("videoPlayer");
+      const playButton = document.getElementById("play_video_button");
+      const pauseButton = document.getElementById("pause_video_button");
+
+      playButton.addEventListener("click", () => {
+        videoHome.style.display = "block";
+        videoPlayer.play();
+      });
+
+      pauseButton.addEventListener("click", () => {
+        videoPlayer.pause();
+        videoHome.style.display = "none";
+      });
+    </script>
+    <!-- end -->
+  </body>
+</html>
+
+<!-- 
+      <div class="cursor"></div>
+      <div class="hand">
+        <div class="moving-div">
+          <div class="play_and_play_button">
+            <div class="play-1">
+              <div>
+                <p
+                  style="
+                    font-size: 20px;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                      sans-serif;
+                    margin-bottom: 0;
+                  "
+                >
+                  Play
+                </p>
+              </div>
+            </div>
+            <div class="play-2">
+              <div>
+                <img
+                  src="images/icons/svg/play-icon.svg"
+                  alt=""
+                  class="play-2-img"
+                  style="
+                    width: 20px;
+                    height: 20px;
+                    filter: invert(100%) brightness(200%);
+                  "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    -------------------------------  CDN  mouse start home screen ------------------------------------
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script>
       gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
@@ -938,6 +1014,6 @@
         });
       });
     </script>
-    <!-- -------------------------------  CDN  mouse start home screen ------------------------------------ -->
-  </body>
-</html>
+    -------------------------------  CDN  mouse start home screen ------------------------------------
+ 
+-->
