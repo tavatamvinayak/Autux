@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono , Exo } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,13 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+// Configure Exo font
+const exo = Exo({
+  weight: ['400', '700'], // Specify desired weights (e.g., regular and bold)
+  subsets: ['latin'], // Specify subsets (e.g., latin for most use cases)
+  variable: '--font-exo', // CSS custom property for Exo
+  display: 'swap', // Ensures text is visible while font loads
+});
 
 export const metadata = {
   title: "Autux",
@@ -19,8 +26,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${exo.variable} antialiased`}
       >
         {children}
       </body>

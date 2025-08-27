@@ -25,7 +25,7 @@ export default function How_this_works() {
               <div className="flex flex-col justify-start shrink-0  flex-none h-auto relative whitespace-pre-wrap md:w-[724px]">
                 <p
                   style={{ lineHeight: "33px" }}
-                  className="md:text-[24px] text-sm  text-center text-white font-serif"
+                  className="md:text-[24px] text-sm  text-center text-white "
                 >
                   Effortlessly grow your YouTube presence with our streamlined
                   process. Here's how we bring your vision to life.
@@ -56,7 +56,7 @@ export default function How_this_works() {
                     <div className="flex flex-col justify-start shrink-0 flex-none h-auto relative whitespace-pre-wrap w-[274px] ">
                       <p
                         className="text-white  leading-[136.5%] text-[16px] text-justify"
-                        style={{ fontFamily: "sans-serif" }}
+                      
                       >
                         Trust us with your YouTube channel. We align our
                         strategies with your vision and take care of all the
@@ -85,7 +85,7 @@ export default function How_this_works() {
                     <div className="flex flex-col justify-start shrink-0 flex-none h-auto relative whitespace-pre-wrap w-[274px] ">
                       <p
                         className="text-white  leading-[136.5%] text-[16px] text-justify"
-                        style={{ fontFamily: "sans-serif" }}
+                      
                       >
                         Trust us with your YouTube channel. We align our
                         strategies with your vision and take care of all the
@@ -114,7 +114,7 @@ export default function How_this_works() {
                     <div className="flex flex-col justify-start shrink-0 flex-none h-auto relative whitespace-pre-wrap w-[274px] ">
                       <p
                         className="text-white  leading-[136.5%] text-[16px] text-justify"
-                        style={{ fontFamily: "sans-serif" }}
+                      
                       >
                         Trust us with your YouTube channel. We align our
                         strategies with your vision and take care of all the

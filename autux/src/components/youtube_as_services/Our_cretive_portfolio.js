@@ -17,7 +17,7 @@ export default function Our_creative_portfolio() {
                      </h3>
                 </div>
                 <div className='flex  justify-center shrink-0  flex-none h-auto relative whitespace-pre-wrap '>
-                    <p className='border text-sm md:text-2xl font-serif w-[900px] text-center bg-gradient-to-r from-[#F7C7FF] to-[#FFD3E5] bg-clip-text text-transparent'>
+                    <p className='border text-sm md:text-2xl  w-[900px] text-center bg-gradient-to-r from-[#F7C7FF] to-[#FFD3E5] bg-clip-text text-transparent'>
                         Explore the variety and creativity in our work. We craft unique video content that resonates with your audience and aligns perfectly with your brand identity.
                     </p>
                 </div>
